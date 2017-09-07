@@ -84,33 +84,17 @@
     <header ng-controller = "myCtrl">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li ng-repeat="slide in slidesData" data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" ng-class="{ active : ($index == 0) }"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('images/slider/banner.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>{{ bannerCaption }}</h3>
-              <p>{{ bannerText }}</p>
-            </div>
-          </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('images/slider/banner1.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('images/slider/banner2.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
-          </div>
-        </div>
+           <!-- <div> -->
+            <div ng-repeat="slide in slidesData" class="carousel-item " ng-class="{ active : ($index == 0) }"  style="background-image: url('{{ slide.banner_url }}')">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>{{ slide.banner_title }}</h3>
+                <p>{{ slide.banner_text }}</p>
+              </div>
+            </div>  
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
