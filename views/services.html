@@ -1,0 +1,39 @@
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Services
+        <small>Subheading</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#!/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Services</li>
+      </ol>
+
+      <!-- Image Header -->
+      <img class="img-fluid rounded mb-4" src="{{serviceBanner}}" alt="">
+
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="row">
+        <div class="col-lg-4 mb-4" ng-repeat = "product in productData">
+          <div class="card h-100">
+            <h4 class="card-header">{{ product.card_title }}</h4>
+            <div class="card-body">
+              <p class="card-text more">{{ product.card_content }}</p>
+            </div>
+            <!-- <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->

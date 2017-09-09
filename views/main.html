@@ -1,0 +1,98 @@
+<header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li ng-repeat="slide in slidesData" data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" ng-class="{ active : ($index == 0) }"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+           <!-- <div> -->
+            <div ng-repeat="slide in slidesData" class="carousel-item " ng-class="{ active : ($index == 0) }"  style="background-image: url('{{ slide.banner_url }}')">
+              <span class="banner-overlay"></span>
+              <div class="carousel-caption d-none d-md-block">
+                <h3>{{ slide.banner_title }}</h3>
+                <p>{{ slide.banner_text }}</p>
+              </div>
+            </div>  
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h1 class="my-4">Welcome to Modern Cars</h1>
+
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="col-lg-4 mb-4" ng-repeat = "product in firstThree">
+          <div class="card h-100">
+            <h4 class="card-header">{{ product.card_title }}</h4>
+            <div class="card-body">
+              <p class="card-text more">{{ product.card_content }}</p>
+            </div>
+            <!-- <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Portfolio Section -->
+      <h2>Portfolio Heading</h2>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="port in portfolioSix">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" ng-src="{{port.portfolio_url}}" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{port.portfolio_title}}</a>
+              </h4>
+              <p class="card-text more">{{port.portfolio_content}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Features Section -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Modern Business Features</h2>
+          <p>The Modern Business template by Start Bootstrap includes:</p>
+          <ul>
+            <li ng-repeat="feature in featureData" ng-show='($index >5)'>
+                {{feature.feature_name}}
+            </li>
+          </ul>
+          <p>{{featureContent}}</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded" src="{{featureImg}}" alt="">
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>{{featureContent}}</p>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-secondary btn-block" href="#!/contact">Reach Us</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+    
